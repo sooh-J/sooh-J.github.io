@@ -1,21 +1,34 @@
-# LXMERT
+---
+title: [PAPER-REVIEW] LXMERT
+description: "LXMERT: Learning Cross-Modality Encoder Representations from Transformers"
+author: sooh-J
+date: 2024-04-15 11:33:00 +0800
+categories: [PAPER-REVIEW, VLMs]
+tags: [VLMs]
+pin: true
+math: true
+mermaid: true
+image:
+  path: /commons/devices-mockup.png
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  alt: Responsive rendering of Chirpy theme on multiple devices.
+---
 
-# LXMERT**: Learning Cross-Modality Encoder Representations from Transformers**
 
+# LXMERT: Learning Cross-Modality Encoder Representations from Transformers
 url : [https://arxiv.org/pdf/1908.07490.pdf](https://arxiv.org/pdf/1908.07490.pdf)
 
-<aside>
-✔️ **Vision-and-language reasoning**에서는 각 모달리티에 대한 이해 뿐만 아니라, 두 모달리티 간의 alignment와 관계를 파악하는 것이 중요하다.
 
-LXMERT 이전의 연구들은 대부분 single modality에만 중점을 두고 있었다. 이에 논문에서는 vision과 language의 두 모달리티를 연결짓는 cross-modality framework인 **LXMERT**를 제안한다.
-
+<!-- <aside> -->
+> ✔️ Vision-and-language reasoning에서는 각 모달리티에 대한 이해 뿐만 아니라, 두 모달리티 간의 alignment와 관계를 파악하는 것이 중요하다.\
+LXMERT 이전의 연구들은 대부분 single modality에만 중점을 두고 있었다. 이에 논문에서는 vision과 language의 두 모달리티를 연결짓는 cross-modality framework인 **LXMERT**를 제안한다.\
 LXMERT는 이미지를 위한 object relationship encoder, 텍스트 표현을 위한 language encoder, 그리고 두 모달리티 간의 관계를 파악하기 위한 cross-modality encoder의 총 3가지 Transformer encoder로 구성되어 있으며, vision, language, 그리고 cross-modal에 대한 총 5가지 task로 pre-train되어 SOTA 성능과 일반화 능력을 갖는다.
 
-</aside>
+<!-- </aside> -->
 
 ## LXMERT : Model Architecture
 
-![Untitled](assets/img/posts/LXMERT.png)
+![Untitled](/assets/img/posts/LXMERT.png)
 
 이미지와 텍스트는 각각 embedding layer를 통해 임베딩으로 계산된 후, 각자의 encoder를 통과한 후, cross-modality encoder에서 fusion된다.
 
@@ -45,7 +58,7 @@ object-relationship encoder는 $N_R$개, language encoder는 $N_L$개의 동일�
     
     각 모달리티는 bi-directional cross-attention sub-layer를 통해 두 모달리티의 alignment를 학습한다.
     
-    ![수식에서 language feature인 $\hat h_i^k$를 보면, 이전 단계의 language feature와 이전 단계의 모든 object에 대한 image features를 cross attention을 진행해 얻게 된다. image feature도 동일하게 이전 단계의 image feature와 이전 단계의 모든 단어에 대한 language feature를 가지고 cross-attention을 진행해 얻는다.](LXMERT%20be61c4e3621140b7a4c7ab7dcfad3a99/Untitled%201.png)
+    ![.](/assets/img/posts/LXMERT1.png)
     
     수식에서 language feature인 $\hat h_i^k$를 보면, 이전 단계의 language feature와 이전 단계의 모든 object에 대한 image features를 cross attention을 진행해 얻게 된다. image feature도 동일하게 이전 단계의 image feature와 이전 단계의 모든 단어에 대한 language feature를 가지고 cross-attention을 진행해 얻는다.
     
@@ -53,7 +66,7 @@ object-relationship encoder는 $N_R$개, language encoder는 $N_L$개의 동일�
     
     cross-attention layer 다음에, 각 모달리티의 self-attention layer를 거치게 된다. 
     
-    ![Untitled](LXMERT%20be61c4e3621140b7a4c7ab7dcfad3a99/Untitled%202.png)
+    ![Untitled](/assets/img/posts/LXMERT2.png)
     
 - **Feed-forward layer**
     
@@ -111,7 +124,7 @@ Language task에서 단어를 무작위 마스킹한 것처럼, Vision task에�
 **Dataset**
 
 - captioning : `MS COCO`, `Visual Genome`
-- image QA : `VQA v2.0`, `GQA $_{balanced \ version}$`, `VG-QA`
+- image QA : `VQA v2.0`, `GQA{balanced version}`, `VG-QA`
 - size : 9.18M image-and-sentence pairs.
 
 **Pre-training**
@@ -124,14 +137,14 @@ Language task에서 단어를 무작위 마스킹한 것처럼, Vision task에�
 
 **Evaluation**
 
-![Untitled](LXMERT%20be61c4e3621140b7a4c7ab7dcfad3a99/Untitled%203.png)
+![Untitled](/assets/img/posts/LXMERT3.png)
 
 - Visual Question Answering
     - dataset : `VQA v2.0`, `GQA`
     - test dataset에 대해 data augmentation없이 finetuning 진행
     - LXMERT가 기존 SOTA 모델들(VQA : `BAN+Counter`, GQA : `BAN`)을 제치고 SOTA 달성.
     - 특히 GQA의 open-domain question에 대해 기존 SOTA모델 보다 4.6%나 향상된 성능.
-- `NLVR$^2$`
+- `NLVR2`
     - 두 이미지 $img_0, img_1$에 대한 language statement $s$에 대한 image-statement pair를 각각 만들고 classifier를 학습시킴.
     - LXMERT가 기존 SOTA 모델(`MaxEnt`)을 제치고 SOTA 달성.
 
@@ -139,7 +152,7 @@ Language task에서 단어를 무작위 마스킹한 것처럼, Vision task에�
 
 **BERT v.s. LXMERT**
 
-![Untitled](LXMERT%20be61c4e3621140b7a4c7ab7dcfad3a99/Untitled%204.png)
+![Untitled](/assets/img/posts/LXMERT4.png)
 
 1. BERT 인코더 + BUTD 방식의 경우는 LSTM 인코더 + BUTD의 경우와 성능이 비슷하다.
 2. Cross-attention layer와 object embedding에 위치 정보를 추가하여 성능 향상을 확인할 수 있다.
@@ -147,31 +160,16 @@ Language task에서 단어를 무작위 마스킹한 것처럼, Vision task에�
 
 **Effect of the Image QA Pre-training Task**
 
-![Untitled](LXMERT%20be61c4e3621140b7a4c7ab7dcfad3a99/Untitled%205.png)
+![Untitled](/assets/img/posts/LXMERT5.png)
 
 왼쪽 표는 image-QA pre-training task의 중요성을 보여준다. image-QA의 사전학습을 진행(`QA`)하고 Data augmentation없이 fine-tuning하는 것(`FT`)이 그렇지 않은 것보다 성능이 좋은 것을 확인할 수 있다.
 
 **Effect of Vision Pre-training Tasks**
 
-![Untitled](LXMERT%20be61c4e3621140b7a4c7ab7dcfad3a99/Untitled%206.png)
+![Untitled](/assets/img/posts/LXMERT6.png)
 
 pre-training에서 vision task(RoI-Feature Regression, Detected-label Classification)가 없는 경우, 성능이 떨어진다. 
 
 ## Conclusion
 
 LXMERT는 vision과 language의 두 모달리티를 연결짓는 cross-modality framework로, single-modal transformer encoders와 그 둘을 연결하는 cross-modal encoder로 구성된다. 이 모델은 vision, language, cross-modal에 대한 총 5가지 task로 pre-train되어 SOTA 성능과 일반화 능력을 갖는다.
-
-# 질문
-
----
-
-language embedding layer는 language information만으로 학습된 pre-trained parameter를 사용하지 않고 랜덤 초기화값부터 학습을 진행합니다. 
-
-1. 논문에서는 표를 통해, 랜덤 초기화 값부터 학습을 진행하는 것이 파인튜닝을 진행하는 것보다 성능이 좋다는 것을 보입니다. 그런데 그 이유로 제시한 “기존 BERT의 pre-trained parameter는 언어 정보만을 가지고 학습되었기 때문에, 다른 모달리티와의 연결이 부족”하다는 점이 적절한지 이해가 잘 가지 않습니다. 파인튜닝을 진행하면, 기존의 언어 정보에 더해 다른 모달리티(이미지)와의 연결에 대한 정보도 추가로 학습하므로 오히려 single modality와 alignment를 모두 학습할 수 있는 것이 아닌가요?
-2. 언어 인코더와 달리, image object detector인 faster R-CNN은 frozen되어 사용합니다. faster R-CNN도 language embedding layer와 같은 이유(한 가지 모달리티에만 최적화되어 다른 모달리티와의 연결 능력이 없음)를 갖는다면, 이 또한 파인튜닝 or 처음부터 학습한 후 사용되어야 하는 것이 아닌지 궁금합니다.
-
-# 개선 아이디어
-
----
-
-1. 두 개의 single modality encoder는 각각 vision, language의 encoder입니다. 그런데 LXMERT에서는 두 모달리티에 정보의 양이나 특징들 등 분명한 차이가 있음에도 동일한 구조의 encoder를 사용하는 것을 볼 수 있습니다. 여기서 각 모달리티의 특징과 정보 양 차이를 고려해서 다른 구조의 encoder를 사용한다면 alignment의 학습에 더 적절할 것 같습니다.
