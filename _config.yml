@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: sooh-J # the main title
 
-tagline: AI, Vision-Language Model, LLM, MedialAI # it will display as the sub-title
+tagline: Interest in [AI, Vision-Language Model, LLM, MedialAI] # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   sooh-J blog for technical writing.
@@ -34,14 +34,12 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: suhyeon Jun
+  name: sooh-J
   email: jsh040516@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    # - https://twitter.com/username # change to your twitter homepage
     - https://github.com/sooh-J # change to your github homepage
     # Uncomment below to add more social links
-    # - https://www.facebook.com/username
     - https://www.linkedin.com/in/sooh-j
 
 # Site Verification Settings
@@ -93,10 +91,10 @@ theme_mode: light # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: "https://chirpy-img.netlify.app"
+cdn: #"https://chirpy-img.netlify.app"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/commons/avatar.jpg"
+avatar: https://velog.velcdn.com/images/sooh/profile/11ecd993-0864-4189-867e-3825d0dfd33c/image.jpeg #"/commons/avatar.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
