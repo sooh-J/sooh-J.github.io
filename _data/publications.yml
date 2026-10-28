@@ -1,0 +1,87 @@
+# Publications
+# Rendered by _layouts/portfolio.html in the "Publications" section,
+# grouped by year (newest first), mirroring the Timeline layout.
+#
+# `marks` is the single legend for the whole section, printed once at the bottom.
+# Because it is shared, each symbol must mean exactly one thing across all papers.
+#
+# Each year block has a year and a list of items. Item fields:
+#   id      — optional anchor; the item gets id="pub-<id>" so the Timeline can link to it
+#   title   — paper title
+#   authors — list of { name, mark }, in order. `mark` must be one of the symbols
+#             defined in `marks` below; omit it for plain authors.
+#             The site owner's name (profile.name_en) is highlighted automatically.
+#   venue   — venue line, including the year (e.g. "Findings of EMNLP 2026")
+#   note    — optional dimmed suffix after the venue
+#   links   — optional list of { name, url }, shown on the venue line
+
+marks:
+  - mark: "*"
+    text: Equal contribution
+  - mark: "†"
+    text: Corresponding author
+
+years:
+  - year: 2026
+    items:
+      - id: model-swapping
+        title: "New Model, Old Habits: Behavior Transfer under Model Swapping in Multi-Session LLM Agents"
+        authors:
+          - name: Youngbin Choi
+            mark: "*"
+          - name: Sehyun Hwang
+            mark: "*"
+          - name: Suhyeon Jun
+          - name: Seoyeon Lee
+          - name: Sunghyun Choi
+          - name: MoonJeong Park
+          - name: Dongwoo Kim
+        venue: Under review, 2026
+        links:
+          - name: arXiv
+            url: https://arxiv.org/abs/2610.19712
+
+      - id: harness
+        title: The Interplay of Harness Design and Post-Training in LLM Agents
+        authors:
+          - name: Kyungmin Kim
+            mark: "*"
+          - name: Youngbin Choi
+            mark: "*"
+          - name: Seoyeon Lee
+          - name: Suhyeon Jun
+          - name: Dongwoo Kim
+            mark: "†"
+          - name: Sangdon Park
+            mark: "†"
+        venue: Findings of EMNLP 2026
+        links:
+          - name: arXiv
+            url: https://arxiv.org/abs/2606.25447
+
+      - id: concept-unlearning
+        title: Concept Unlearning via Cross-Attention Activation Projection for Diffusion Models
+        authors:
+          - name: Saemi Moon
+          - name: Suhyeon Jun
+          - name: Seoyeon Lee
+          - name: Dongwoo Kim
+            mark: "†"
+        venue: NeurIPS 2026 Workshop InfPriv (Oral Presentation)
+        links:
+          - name: arXiv
+            url: https://arxiv.org/abs/2605.25765
+
+  - year: 2022
+    items:
+      - id: spot-color
+        title: A Study on A Deep Learning Algorithm to Predict Printed Spot Colors
+        authors:
+          - name: Suhyeon Jun
+          - name: Jae Sang Park
+          - name: Hyun Chul Tae
+            mark: "†"
+        venue: Journal of Korean Society of Industrial and Systems Engineering, 45(2), 48–55, 2022
+        links:
+          - name: DOI
+            url: https://doi.org/10.11627/jksie.2022.45.2.048

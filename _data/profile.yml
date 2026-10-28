@@ -21,14 +21,16 @@ bio_paragraphs:
     <a href="https://dongwookim-ml.github.io/" target="_blank" rel="noopener">Prof.
     Dongwoo Kim</a>.
   - >-
-    My research focuses on <strong>Trustworthy AI</strong>, with particular
-    interest in methods for machine unlearning, privacy-preserving ML, and
-    robust evaluation of AI systems. I am also broadly interested in
-    <strong>Generative AI</strong>.
+    I am interested in how to keep models up to date as the world changes,
+    and I approach this through <strong>Knowledge Editing</strong>: updating,
+    correcting, or removing what a trained model knows without retraining it
+    from scratch. This grows out of my earlier work on
+    <strong>machine unlearning</strong> and on how
+    <strong>harness design</strong> and post-training shape the behavior of LLM agents.
 
 contact:
   email: suhyeonjun@postech.ac.kr
   github: https://github.com/sooh-J
   linkedin: https://www.linkedin.com/in/sooh-j
-  scholar: # add Google Scholar URL here when available
-  cv: /assets/cv/Suhyeon_Jun_CV.pdf
+  scholar: https://scholar.google.com/citations?user=E2yNPiIAAAAJ
+  cv: # add a CV PDF under /assets/cv/ and point here to re-enable the CV link

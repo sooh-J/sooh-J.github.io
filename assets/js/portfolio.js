@@ -12,6 +12,23 @@
     });
   }
 
+  /* ---------- timeline jumps: flash the Experience/Publication entry on arrival ---------- */
+  document.querySelectorAll('[data-jump]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var target = document.getElementById(a.getAttribute('href').slice(1));
+      // Flash single entries only; a whole section lighting up is too much
+      if (!target || target.classList.contains('section')) return;
+      // Restart the animation even when the same entry is clicked twice
+      target.classList.remove('is-flash');
+      void target.offsetWidth;
+      target.classList.add('is-flash');
+    });
+  });
+
+  document.addEventListener('animationend', function (e) {
+    if (e.animationName === 'jump-flash') e.target.classList.remove('is-flash');
+  });
+
   /* ---------- scrollspy: highlight nav link of the section in view ---------- */
   var navLinks = document.querySelectorAll('[data-nav]');
   if (!navLinks.length) return;

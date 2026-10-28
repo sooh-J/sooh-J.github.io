@@ -1,4 +1,5 @@
-- role: AI Engineer
+- id: dalpha
+  role: AI Engineer
   team: Sprint Team
   org: Dalpha
   org_url:
@@ -16,7 +17,8 @@
     - Built a survey automation system by generating a dynamic decision tree from PDF forms using OCR, question structuring, and semantic analysis of answer choices.
     - Built a KakaoTalk-integrated chatbot with retrieval and LLM-based response generation.
 
-- role: Research Intern
+- id: aiot
+  role: Research Intern
   team: AIoT Lab
   org: POSTECH Institute of Artificial Intelligence
   org_url:
@@ -30,7 +32,8 @@
     - Designed guidelines and constructed a prompt-driven dataset for timbre description and model training.
     - Built a preprocessing and training pipeline to learn non-linear mappings between text and timbre embeddings using Normalizing Flow.
 
-- role: Contract Research Assistant / Research Intern
+- id: kitech
+  role: Contract Research Assistant / Research Intern
   team: Digital Healthcare R&D Department
   org: Korea Institute of Industrial Technology (KITECH)
   org_url:

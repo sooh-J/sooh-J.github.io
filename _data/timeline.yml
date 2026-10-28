@@ -2,6 +2,7 @@
   events:
     - date: Feb
       title: M.S. in Computer Science and Engineering
+      link: publications
       where: POSTECH
       detail: Machine Learning Lab, advised by Prof. Dongwoo Kim
       ongoing: true
@@ -10,6 +11,7 @@
   events:
     - date: Feb – Jul
       title: AI Engineer
+      link: exp-dalpha
       where: Dalpha (Sprint Team)
       detail: Building real-world AI services across LLMs, generative models, and multimodal applications.
 
@@ -17,6 +19,7 @@
   events:
     - date: Jul – 2025 Jan
       title: AI Engineer (Intern)
+      link: exp-dalpha
       where: Dalpha (Sprint Team)
     - date: Aug
       title: B.S. in Smart ICT Convergence
@@ -27,6 +30,7 @@
   events:
     - date: Oct – Dec
       title: Research Intern
+      link: exp-aiot
       where: POSTECH Institute of Artificial Intelligence (AIoT Lab)
       detail: Text-prompted timbre generation using Normalizing Flow.
 
@@ -34,5 +38,6 @@
   events:
     - date: Jan – Dec
       title: Research Assistant / Intern
+      link: exp-kitech
       where: KITECH, Digital Healthcare R&D Department
       detail: Deep learning for printed spot color prediction.
